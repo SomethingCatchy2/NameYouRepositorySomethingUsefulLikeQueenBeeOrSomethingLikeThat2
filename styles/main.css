@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(98% 0.003 247.858);
+  --color-base-200: oklch(96% 0.007 247.896);
+  --color-base-300: oklch(92% 0.013 255.508);
+  --color-base-content: oklch(20% 0.042 265.755);
+  --color-primary: oklch(60% 0.25 292.717);
+  --color-primary-content: oklch(96% 0.016 293.756);
+  --color-secondary: oklch(58% 0.233 277.117);
+  --color-secondary-content: oklch(96% 0.018 272.314);
+  --color-accent: oklch(76% 0.233 130.85);
+  --color-accent-content: oklch(98% 0.031 120.757);
+  --color-neutral: oklch(37% 0.044 257.287);
+  --color-neutral-content: oklch(98% 0.003 247.858);
+  --color-info: oklch(58% 0.158 241.966);
+  --color-info-content: oklch(97% 0.013 236.62);
+  --color-success: oklch(60% 0.118 184.704);
+  --color-success-content: oklch(98% 0.014 180.72);
+  --color-warning: oklch(68% 0.162 75.834);
+  --color-warning-content: oklch(98% 0.026 102.212);
+  --color-error: oklch(58% 0.253 17.585);
+  --color-error-content: oklch(96% 0.015 12.422);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.3125rem;
+  --size-field: 0.3125rem;
+  --border: 2px;
+  --depth: 1;
+  --noise: 1;
+}
+
+
+@theme {
+    
+    /* Sets the default font for the website, see */
+  --font-sans: "Macondo", sans-serif;
+
+}
+
+
+h1 {
+  @apply text-4xl ms-4 font-bold;
+}
+
+h2 {
+  @apply text-3xl ms-4 font-bold;
+}
+
+h3 {
+  @apply text-2xl ms-4 font-bold;
+}
+
+h4 {
+  @apply text-xl ms-4 font-bold;
+}
+
+h5 {
+  @apply text-lg ms-4 font-bold;
+}
+
+h6 {
+  @apply text-base ms-4 font-bold;
+}
+
+p {
+  @apply ms-4;
+}
+
+pre {
+    @apply ms-4;
+}
+
+a {
+    @apply ms-1;
+}
+
+.container {
+  @apply max-w-5xl mx-auto block p-4;
+}

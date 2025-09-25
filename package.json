@@ -1,0 +1,23 @@
+{
+  "name": "gobee",
+  "version": "1.1.24535765848456",
+  "description": "a go bee",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build:css": "tailwindcss -i ./styles/main.css -o ./static/css/output.css --minify",
+    "watch:css": "tailwindcss -i ./styles/main.css -o ./static/css/output.css --minify --watch"
+  },
+  "keywords": [
+    "taco"
+  ],
+  "author": "me",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "daisyui": "^5.1.7",
+    "tailwindcss": "^4.1.13"
+  }
+}
