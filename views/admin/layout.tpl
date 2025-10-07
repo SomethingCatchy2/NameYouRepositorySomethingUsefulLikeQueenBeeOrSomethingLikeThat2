@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="{{.BaseUrl}}/static/css/output.css">
 {{ block "css" . }}{{ end }}
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
 </head>
 <body>
 <header class="navbar bg-base-100 shadow-lg mb-4">

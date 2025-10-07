@@ -2,8 +2,10 @@ package models
 
 import (
 	"log"
+	"os"
 
 	"github.com/beego/beego/v2/adapter/orm"
+	_ "github.com/lib/pq"
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -17,8 +19,19 @@ type ContactModel struct {
 var O orm.Ormer
 
 func InitDB() {
-	orm.RegisterDriver("sqlite3", orm.DRSqlite)
-	orm.RegisterDataBase("default", "sqlite3", "./goBee.db")
+	driverName := os.Getenv("DATABASE_DRIVER")
+	dataSource := os.Getenv("DATABASE_URL")
+	driver := orm.DRSqlite
+	if driverName == "postgres" {
+		driver = orm.DRPostgres
+	} else {
+		driverName = "sqlite3"
+		dataSource = "./stopwatch.db"
+	}
+	orm.RegisterDriver(driverName, driver)
+	orm.RegisterDataBase("default", driverName, dataSource)
+	// orm.RegisterDriver("sqlite3", orm.DRSqlite)
+	// orm.RegisterDataBase("default", "sqlite3", "./goBee.db")
 	// this function can take a list, e.g. orm.RegisterModel(new(M1), new(M2), ...)
 	orm.RegisterModel(new(ContactModel), new(User), new(Visits))
 	O = orm.NewOrm()

@@ -6,6 +6,7 @@ import (
 	"log"
 
 	beego "github.com/beego/beego/v2/server/web"
+	_ "github.com/beego/beego/v2/server/web/session/postgres"
 	"github.com/joho/godotenv"
 )
 

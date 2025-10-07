@@ -1,5 +1,13 @@
 {{ template "layout.tpl" . }}
 {{ define "content" }}
+<head>
+    <title>{{ .Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="{{.BaseUrl}}/static/css/output.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    {{ block "css" . }}{{ end }}
+    </head>
   <h2 class="text-2xl font-bold text-center">Contact Us</h2>
   <!-- notice the method="POST" for a POST request and the action specificying what route to hit. -->  
   <form method="POST" action="/contact">

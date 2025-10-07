@@ -1,0 +1,23 @@
+networks:
+  # these are for connecting with postgres and traefik later
+  pg:
+    driver: bridge
+    external: true
+  traefik:
+    driver: bridge
+    external: true
+services:
+  boating:
+    container_name: boating
+    image: boating
+    restart: unless-stopped
+    networks:
+      - traefik
+      - pg
+    labels:
+      # this is so the traefik proxy connects your domain to your app
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.boating.rule=Host(`boating.meritprepacademy.app`)"
+      - "traefik.http.routers.boating.entrypoints=web"
+      - "traefik.http.services.boating.loadbalancer.server.port=8080"
